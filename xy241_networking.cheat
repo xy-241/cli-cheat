@@ -1,0 +1,4 @@
+% xy241, networking
+
+# Create Bi-directional TCP Relay Between Local and Remote
+sudo socat -v -d -d TCP-LISTEN:<PORT_NUMBER>,fork TCP4:<PRIVATE_ENDPOINT>:<PORT_NUMBER>

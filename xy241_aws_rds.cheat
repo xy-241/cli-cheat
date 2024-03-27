@@ -1,0 +1,4 @@
+% xy241, aws, rds
+
+# List out the endpoint of all RDS instances inside an account
+aws rds describe-db-instances | jq ".DBInstances[].Endpoint"

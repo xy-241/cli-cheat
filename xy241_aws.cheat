@@ -1,0 +1,6 @@
+% xy241, aws
+
+$ aws_region: echo "ap-southeast-1"
+
+
+

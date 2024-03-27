@@ -1,0 +1,4 @@
+% xy241, database 
+
+# Export data out from a postgresDB in sql format
+pg_dump -O -h <db_hostname> -p <host_port> -U <db_username> -d <db_name> > export.sql

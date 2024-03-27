@@ -1,0 +1,10 @@
+% xy241, aws, ecs
+
+# Obtain a SSH shell into ECS
+aws ecs execute-command \
+	--cluster <CLUSTER_NAME> \
+	--task <TASK_ID> \
+	--container <CONTAINER_NAME> \
+	--interactive  \
+	--command "/bin/sh"
+

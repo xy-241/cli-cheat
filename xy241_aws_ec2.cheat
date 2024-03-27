@@ -1,0 +1,16 @@
+% xy241, aws, ec2
+
+# Obtain the tags and id of all EC2 (EC2 Information)
+aws ec2 describe-instances \
+| jq '.Reservations[].Instances[] | {Tags: .Tags, InstanceId: .InstanceId, State: .State}'
+
+# Start a particular EC2 instance
+aws ec2 start-instances --instance-ids <YOUR_INTANCE_ID>
+
+# SSH into Private EC2 on Local Machine
+aws ssm start-session --target <INTANCE_ID>
+
+# Port forwarding an EC2 port to an local machine port
+aws ssm start-session --target <bastion_instance_id> --region <aws_region> --document-name AWS-StartPortForwardingSession --parameters portNumber=<ec2_port>,localPortNumber=<local_port>
+
+@ xy241, aws
