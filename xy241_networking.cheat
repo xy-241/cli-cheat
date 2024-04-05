@@ -1,4 +1,13 @@
-% xy241, networking
+% xy241, networking, port_forwarding
 
-# Create Bi-directional TCP Relay Between Local and Remote
+# Forward traffic from a local machine Network Port to a remote network port over TCP
 sudo socat -v -d -d TCP-LISTEN:<PORT_NUMBER>,fork TCP4:<PRIVATE_ENDPOINT>:<PORT_NUMBER>
+
+# Port forward a local machine network port to a fly.io app container port
+flyctl proxy <local_port>:<remote_port> -a <app_name>
+
+
+# Port forward a local machine network port to an EC2 port 
+aws ssm start-session --target <ec2_instance_id> --region <aws_region> --document-name AWS-StartPortForwardingSession --parameters portNumber=<ec2_port>,localPortNumber=<local_port>
+
+@ xy241, aws

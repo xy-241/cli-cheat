@@ -1,0 +1,22 @@
+% xy241, aws, parameter-store
+
+# Update a particular parameter store item
+aws ssm put-parameter \
+	--name "<parameter_name>"\
+	--value "<parameter_value>" \
+	--type SecureString \
+	--overwrite
+
+# Obtain the info of specified parameters, use '|' to add separate multiple parameter names
+aws ssm get-parameters-by-path \
+	--path / \
+	--recursive \
+	--with-decryption \
+| jq '.Parameters[] | select(.Name | test("<parameter_name>"))'
+
+
+# Bulk download all parameters into a local file .env
+aws-parameter-bulk get / --prefixpath > .env
+
+# Bulk upload all parameters specified in .env to AWS parameter store 
+aws-parameter-bulk save .env
