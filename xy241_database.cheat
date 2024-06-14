@@ -4,6 +4,6 @@
 pg_dump -O -Fc -h <database_endpoint> -p <database_port> -U <database_user> -d <postgres_database> -f <database_dump_filename>
 
 # Restore postgres db from PostgreSQL custom database dump 
-pg_restore -v  -h <database_endpoint> -p <database_port> -U <database_user> -d <postgres_database> -f <database_dump_filename> 
+pg_restore -v  -h <database_endpoint> -p <database_port> -U <database_user> -d <postgres_database> <database_dump_filename> 
 
 
