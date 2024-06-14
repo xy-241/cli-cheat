@@ -1,4 +1,9 @@
-% xy241, database 
+% xy241, database
 
-# Export data out from a postgresDB in sql format
-pg_dump -O -h <db_hostname> -p <host_port> -U <db_username> -d <db_name> > export.sql
+# Export postgres db in postgres dump format 
+pg_dump -O -Fc -h <database_endpoint> -p <database_port> -U <database_user> -d <postgres_database> -f <database_dump_filename>
+
+# Restore postgres db from PostgreSQL custom database dump 
+pg_restore -v  -h <database_endpoint> -p <database_port> -U <database_user> -d <postgres_database> -f <database_dump_filename> 
+
+
