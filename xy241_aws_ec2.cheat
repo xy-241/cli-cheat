@@ -2,7 +2,7 @@
 
 # Obtain the tags and id of all EC2 (EC2 Information)
 aws ec2 describe-instances \
-| jq '.Reservations[].Instances[] | {Tags: .Tags, InstanceId: .InstanceId, State: .State}'
+| jq '.Reservations[].Instances[] | {Tags: .Tags, InstanceId: .InstanceId, State: .State, PublicIpAddress: .PublicIpAddress}'
 
 # Start a particular EC2 instance
 aws ec2 start-instances --instance-ids <YOUR_INTANCE_ID>
