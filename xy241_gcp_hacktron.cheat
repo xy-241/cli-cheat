@@ -15,5 +15,8 @@ gcloud auth application-default login
 # List out all the instances and their ids
 gcloud compute instances list
 
+# List out all the secrets
+gcloud secrets list
+
 # Access the latest version of a secret
 gcloud secrets versions access latest --secret=<secret_name>
