@@ -1,0 +1,19 @@
+% xy241, gcp, hacktron
+
+# Authenticate gcloud CLI
+gcloud auth login
+
+# List out all the projects and their ids
+gcloud projects list
+
+# Set the project
+gcloud config set project <project_id>
+
+# Login to GCP for application default credentials
+gcloud auth application-default login
+
+# List out all the instances and their ids
+gcloud compute instances list
+
+# Access the latest version of a secret
+gcloud secrets versions access latest --secret=<secret_name>
