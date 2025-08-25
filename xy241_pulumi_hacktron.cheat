@@ -1,0 +1,15 @@
+% xy241, pulumi, hacktron
+
+# Pulumi Config Setup for Hacktron repo
+pulumi config set gcp_project_id <gcp_project_id> && \
+pulumi config set gcp_region us-central1 && \
+pulumi config set github_owner <your_github_username> && \
+pulumi config set git_repo_name hacktron && \
+pulumi config set git_branch_name main && \
+export PULUMI_CONFIG_PASSPHRASE=<pulumi_secret_name>
+
+# Deploy Hacktron Infra with Pulumi
+uv run pulumi up
+
+# Get the output of the Pulumi stack
+uv run pulumi stack output
